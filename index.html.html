@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+   <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poopins, sans-serif;
+}
+
+.nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 0rem 6.5rem;
+    background: #222;
+    z-index: 100000;
+    display: flex;
+}
+.nav h2{
+    color: #fff;
+    font-size: 1.7rem;
+    
+}
+#items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+}
+#items li{
+    list-style: none;
+    padding-right: 50px;
+    text-align: left;
+}
+
+#items li a{
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: left;
+    
+}
+
+
+#items li a:hover{
+    color: #ff5733;
+    cursor: pointer;
+}
+
+.back{
+    background-image: url(gym3.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
+}
+
+.back .overlay{
+    color: #222;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8s;
+}
+
+.mid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.mid p{
+    color: #7f8c8d;
+    font-size: 1.3rem;
+
+}
+.mid h2{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.mid .btn{
+margin-top: 2rem;
+}
+ 
+.btn .btn a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mid .btn a.simple{
+    color: #fff;
+    font-weight: 500;
+    padding: 0.9 1.6rem;
+    text-decoration: none;
+    margin: 30px;
+}
+
+.mid .btn a.simple:hover{
+    color: #ff5733;
+}
+
+.mid .btn a.border{
+    color: #ff5733;
+    border: 1px solid #ff5733;
+    font-weight: 500;
+    padding: 0.9rem 1.6rem;
+    border-radius: 3px;
+    
+    
+}
+.mid .btn a.border:hover{
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8rem 15rem;
+    background-color: #171819;
+}
+.details h1,h3,h6,h5{
+    color: #fff;
+}
+.details .one{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.details .one h6{
+    font-size: 1.3rem;
+    padding-bottom: 1.1rem;
+}
+.details .one p{
+    color: #666262;
+    font-size: 1.2rem;
+    padding-bottom: 3rem;
+}
+.details .one a{
+    color: #fff;
+    background: #f13a11;
+    padding: 1rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+.details .one a:hover{
+
+    background-color: #fff;
+    color: #f13a11;
+}
+.details .two{
+    width: 45%;
+    border-left: 1px solid #666262;
+    padding-left: 4rem;
+}
+
+
+.details .two h3{
+    font-size: 2.5rem;
+    padding-bottom: 1.1rem;
+}
+.details .two h5{
+    font-size: 1.1rem;
+
+}
+
+.details .two p{
+    font-size: 1.1rem;
+    color: #666262;
+    margin-bottom: 0.8rem;
+}
+.trainer{
+    background: #f9f9f9;
+    padding: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trainer .about{
+width: 39%;
+}
+
+.trainer .about h2{
+    color: #212529;
+    font-size: 2.1rem;
+    padding-bottom: 1.8rem;
+
+}
+
+.trainer .about p{
+    color: #7f8c8d;
+    font-size: 1.1rem
+}
+.trainer .people{
+    width: 57%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    }
+.trainer .people .team1{
+    width: 45%;
+    height: auto;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.01),
+    
+}
+.trainer .people .team1 .img img{
+    width: 100%;
+    object-fit: cover;
+}
+.trainer .people .team1 .name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.trainer .people .team1 .pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.trainer .people .team1 .pro{
+    padding: 0 20px 5px 20px ;
+    margin-bottom: 5px;
+}
+
+.trainer .people .team1 .name{
+    padding: 5px 20px 0 20px;
+}
+.trainer .people .team1 .teamDetails{
+    
+    margin: 8px;
+    
+}
+
+.trainer .people .team1 .name h4{
+    color: #212529;
+    font-size: 1.5rem;
+}
+.class{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 8rem;
+}
+.class .paragraph{
+    font-size: 1.1rem;
+    color: #666262;
+    padding-bottom:2px;
+    text-align: center;
+}
+.class .h2{
+    font-size: 2.3rem;
+    color: #050505;
+    font-weight: 700;
+    padding-bottom:10px;
+    text-align: center;
+}
+.class .classMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.class .classMenu.team1{
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.01),
+    
+}
+.class .classMenu .team1 .img img{
+    width: 95%;
+    object-fit: cover;
+}
+.class .classMenu.team1 .name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.class .classMenu.team1 .pro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.class .classMenu.team1 .pro{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px 5px 20px ;
+    margin-bottom: 5px;
+}
+
+.class .classMenu .team1 .name{
+    padding: 5px 20px 0 20px;
+}
+.class .classMenu .team1 .teamDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px;
+    
+}
+.class .classMenu .team1 .teamDetails .name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 30px 0 30px;
+}
+.class .classMenu .team1 .teamDetails .name .nameDetails h4{
+    color: #212529;
+    font-size: 1.7rem;
+
+}
+.class .classMenu .team1 .teamDetails .name .nameDetails p span{
+    color: #212529;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-direction: row;
+}
+.class .classMenu .team1 .teamDetails .name .num h5{
+    
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #f13a11;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 50%;
+}
+.class .classMenu .team1 .pro p{
+    padding: 15px 30px 30px 30px;
+
+}
+.class .classMenu .team1 .pro p{
+    font-size: 1.1rem;
+    color: #666262;
+
+
+}
+.class .classMenu .team1 .teamDetails .name .num h5{
+    
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #f13a11;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 50%;
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+h1{
+    color: #333;
+    margin-bottom: 60px;
+
+}
+iframe{
+    width: 80%;
+    height: 500;
+    filter: invert(100%);
+}
+
+
+
+   </style>
+</head>
+    <div class="nav">
+        <h2> Gymsofitness</h2>
+        <ul id="items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Contect</a></li>
+            </ul>
+            <div class="icon">
+                <!-- <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-youtube-play" aria-hidden="true"></i> -->
+                
+               <img src="aap.png" alt="aap" height="80px" width="80px">
+               <img src="twitter.png" alt="aap" height="80px" width="80px">
+               <img src="insta.png" alt="aap" height="80px" width="80px">
+            </div>
+        
+    </div>
+
+    <div class="back">
+        <div class="overlay"></div>
+
+    </div>
+    <div class="mid">
+        <p>New way to build a healthy lifestyle</p>
+        <h2>UPGRADE YOUR BODY AT GYM FITNESS</h2>
+        <div class="btn">
+            <a class="simple" href="#">Get Started</a>
+            <a class="border" href="#">Learn More</a>
+        </div>
+    </div>
+    <div class="details">
+        <div class="one">
+            <h1>New to the gymso?</h1>
+            <h6>Your membership is up to 2 months free ($62.50 per momth)</h6>
+            <p> Gymso is free HTML template by Tooplate for your commercial<br>
+                website. Bootstrap v4.2.1 Layout. feel free to use it.
+            </p>
+            <a href="#">Bcome a member today</a>
+
+        </div>
+        <div class="two">
+            <h1> Working hours</h1>
+            <br>
+            <h5>Sunday : Closed</h5>
+            <h5>Monday - Friday</h5>
+            <p>7:00 AM - 10:00 PM</p>
+            <br>
+            <h5>Monday - Friday</h5>
+            <p>7:00 AM - 10:00 PM</p>
+        </div>
+    </div>
+
+    <div class="trainer">
+        <div class="about">
+            <h2>Hello, we are Gymso</h2>
+            <p>A personal trainer is an indvidual<br> who has earned a 
+                certification that<br> demonstrates they have achieved a<br> level of 
+                competency for creating and delivering <br>safe and effective
+                exercise programs<br> for apparently healthy indviduals and groups.
+                <br>
+                <br>
+                They motivation clients by collaborating <br>to set goals, providing 
+                meanigful feedback,<br> and by being a reliable source for<br> 
+                accuntability. Thank you.
+            </p>
+
+        </div>
+        <div class="people">
+            <div class="team1">
+                <div class="img">
+                    <img src="fit1.jpg">
+                </div>
+                <div class="teamDetails">
+                    <div class="name">
+                        <h4>Mary Yan</h4>
+
+                    </div>
+                    <div class="pro">
+                        <p>Yoga Instructor</p>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <div class="team1">
+        <div class="img">
+            <img src="fit2.jpg" height="">
+        </div>
+        <div class="teamDetails">
+            <div class="name">
+                <h4>Mary Yan</h4>
+
+            </div>
+            <div class="pro">
+                <p>Yoga Instructor</p>
+            
+            </div>
+        </div>
+</div>
+</div>
+<div class="class">
+    <p class="paragraph">Get A Perfect body</p>
+    <h2 class="h2">Our Training Classes</h2>
+    <div class="classMenu">
+        <div class="team1">
+            <div class="img">
+                <img src="lady.jpeg" height="400px" width="80px">
+            </div>
+            <div class="teamDetails">
+                <div class="name">
+                    <div class="nameDetails">
+                        <h4>Yoga</h4>
+                        <p>Trained by-<b>Bella</b></p>
+                    </div>
+                
+                <div class="pro">
+                    <p>Lorem ipsum, dolor sit adipisicing elit.<br>
+                         Neque possimus enim veritatis ?</p>
+    
+                </div>
+                <div class="num">
+                    <h5>$30</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="team1">
+        <div class="img">
+            <img src="run.jpeg" height="400px" width="80px">
+        </div>
+        <div class="teamDetails">
+            <div class="name">
+                <h4>Fitness</h4>
+<p>train by-<space><b>Bella</b></p>
+            </div>
+            <div class="num">
+               
+                <p class="lili">Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Pariatur, obcaecati.</p>
+    
+            </div>
+        </div>
+        </div>
+</div>
+</div>
+<div class="hero">
+    <h1>Embed Location Map</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5064104382154!2d77.1829427754968!3d28.52449457572391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e065dc72379%3A0xf6e7259f610de1d7!2sQutab%20Minar%2C%20Seth%20Sarai%2C%20Mehrauli%2C%20New%20Delhi%2C%20Delhi%20110030!5e0!3m2!1sen!2sin!4v1695457993922!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+</body>
+</body>
+</html>
